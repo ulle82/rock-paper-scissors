@@ -4,14 +4,12 @@ const choices = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
     let computerSelection = Math.floor(Math.random() * 3);
-    // console.log(choices[computerSelection]);
     return choices[computerSelection];
 }
 
 function getHumanChoice() {
     let playerSelection = prompt("Please enter: Rock, Paper or Scissors");
     playerSelection = playerSelection.toLowerCase();
-    // console.log(playerSelection);
     return playerSelection;
 }
 
@@ -47,16 +45,14 @@ function playRound(humanChoice, computerChoice) {
 function playGame() {
     for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());
-        if (i == 4) {
-            if (humanScore > computerScore) {
-                console.log(`Congratulation, you win! Your score is ${humanScore} and the computers is ${computerScore}.`);
-            } else if (computerScore > humanScore) {
-                console.log(`You lose! Your score is ${humanScore} and the computers is ${computerScore}. Better luck next time!`);
-            } else {
-                console.log(`Its a draw! You both scored ${humanScore} points`);
-            }
-            
-        }
+    }
+    
+    if (humanScore > computerScore) {
+        console.log(`Congratulation, you win! Your score is ${humanScore} and the computers is ${computerScore}.`);
+    } else if (computerScore > humanScore) {
+        console.log(`You lose! Your score is ${humanScore} and the computers is ${computerScore}. Better luck next time!`);
+    } else {
+        console.log(`Its a draw! You both scored ${humanScore} points`);
     }
 }
 
